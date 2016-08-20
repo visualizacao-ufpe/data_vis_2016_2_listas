@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista 1</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>	        	
+    </head>
+    <body>
+      <h1>Visualização de Dados 2016.2 Lista de Exercícios 1</h1>
+      <!--------------------------------- -->
+      <div id="info"> 
+	<h2>Informações Gerais</h2>
+	Os três primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Não serão dados pontos extras, mas alunos de graduação que tentarem fazer os problemas não obrigatórios receberam feedback neles também. É recomendada a leitura dos capítulos 3 e 5 do livro <em>Interactive Data Visualization for the Web</em> e também o uso da documentação da <em>Mozilla Developer Network</em>.
+      </div>
+      <!--------------------------------- -->
+      <div id="duedate"> 
+      <h2>Data de Entrega</h2>
+      A entrega deverá ser feita via GitHub até 26/08/2016 até 23:59. Veja as instruções para entrega <a href="http://www.cin.ufpe.br/~nivan/teaching/data_vis/fall_2016/website/assignments.html">aqui</a>.
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 1 (Para todos os alunos)</h2>
+	Para a solução deste problema, crie um arquivo <em>problema1.html</em> e outro chamado <em>problema1.js</em>. Como arquivo de teste, usaremos o famoso <a href="https://en.wikipedia.org/wiki/Iris_flower_data_set">Iris dataset</a>. Para ter acesso a ele, inclua a sequinte linha no elemento head to seu arquivo html
+	<pre>
+	  <code>
+	    	    &lt;script src="http://www.cin.ufpe.br/~nivan/teaching/data_vis/fall_2016/material/iris.js"&gt;&lt;/script&gt;
+	  </code>
+	</pre>
+	Javascript contém várias funções que bastante úteis para o processamento de arrays. Leia a documentação das funcões <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a> e <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>. Crie um arquivo chamado <em>problema1.js</em> e nele implemente o pedido em cada um dos itens abaixo (sem utilizar loops):
+	<ul>
+	  <li>Uma função chamada <em>getMinimum</em> que dado o nome da coluna (e.g., "Sepal.Length") e uma espécie (e.g. "setosa") retorna o maior valor da coluna para a espécie dada. </li>
+	  <li>Uma função chamada <em>getAverage</em> que dado o nome da coluna (e.g., "Sepal.Length") e uma lista espécies (e.g. ["versicolor","virginica"]) retorna a média da coluna para inidvíduos das espécies listadas. </li>
+	  <li>Uma função chamada <em>getMaximumNotIn</em> que dado o nome da coluna (e.g., "Sepal.Length") e uma lista espécies (e.g. ["versicolor","virginica"]) retorna o maior valor da coluna para inidvíduos de espécies não listadas. </li>
+	</ul>
+	
+      </div>
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 2 (Para todos os alunos)</h2>
+	Crie um arquivo chamado <em>problema2.html</em>. Neste arquivo crive um elemento svg que replica a seguinte figura:</br>
+
+	<center><img src="figs/sword.png" height="200px"></a></center>
+	
+      </div>
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 3 (Para todos os alunos)</h2>
+	O nosso objetivo é criar uma função que gera <a href="https://pt.wikipedia.org/wiki/Gr%C3%A1fico_de_dispers%C3%A3o" target="_blank">gráficos de dispersão</a> (<em>scatter plots</em>). Para este problema usaremos novamente o Iris dataset do problema 1. A meta é criar uma função chamada <em>scatterplot</em> que recebe 2 parâmetros: duas colunas do dataset (e.g.,"Petal.Length","Petal.Width") e cria o gráfico de dispersão correspondente em um elemento svg previamente criado na página. No gráfico gerado, os pontos devem ser coloridos de acordo com a espécie do ponto respectivo. Além disso, os gráfico deve conter eixos e texto indicando a coordenada representada pelo eixo bem como os limites dos dados naquele eixo. Você deve usar D3 para a resolução deste exercício. Um exemplo de do resultado desta função é a seguinte figura</br>
+	<center><img src="figs/scatterplot.png" height="500px"></a></center>
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem4"> 
+	<h2>Problema 4 (Obrigatório apenas para alunos de pós-graduação)</h2>
+	O nosso objetivo é criar uma função que gera matrizes de dispersão (<a href="http://r-nold.blogspot.com.br/2014/11/scatter-plot-matrices-in-r.html" target="_blank"><em>scatter plot matrix</em></a>).
+	Estas são matrizes de gráficos de dispersão, nas quais cada linha e coluna corresponde à uma dimensão do conjunto de dados. Por exemplo, veja a seguinte imagem </br>
+	<center><img src="figs/scattermatrix.png" height="500px"></a></center>
+	
+	A meta é criar uma função chamada <em>scatterplotMatrix</em> que recebe como paremetro um array contendo as colunas que deverão ser visualizadas (e.g.,["Petal.Length","Petal.Width"]) e gera a matriz de dispersão correspondente.
+	A visualização deverá ser gerada em único elemento svg usando D3. Cada gráfico da matriz deve serguir as especificações do problema 3 (isto é, pontos coloridos de acordo com as espécies e apresentar o limite de cada eixo). As células da identidade deverão conter um texto indicando a coordenada correspondente. 
+      </div>
+
+
+    </body>
+</html>   
