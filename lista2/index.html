@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista 2</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>	        	
+    </head>
+    <body>
+      <h1>Visualização de Dados 2016.2 Lista de Exercícios 2</h1>
+      <!--------------------------------- -->
+      <div id="info"> 
+	<h2>Informações Gerais</h2>
+	Os três primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Os alunos de graduação que resolverem o problema 4 <strong>integralmente</strong>, receberam créditos extras na nota das listas de exercício. É recomendada a leitura dos capítulos 3 e 5 do livro <em>Interactive Data Visualization for the Web</em> e também o uso da documentação da <em>Mozilla Developer Network</em>.
+      </div>
+      <!--------------------------------- -->
+      <div id="duedate"> 
+      <h2>Data de Entrega</h2>
+      A entrega deverá ser feita via GitHub até XX/09/2016 até 23:59. Veja as instruções para entrega <a href="http://www.cin.ufpe.br/~nivan/teaching/data_vis/fall_2016/website/assignments.html">aqui</a>.
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 1 (Para todos os alunos)</h2>
+	Neste problema você deverá utilizar d3 para desenvolver uma função que desenha um gráfico de pizza (ou <em>pie chart</em>). A solução deste problema deverá conter dois arquivos <em>problema1.html</em> e <em>problema1.js</em>.
+	No arquivo .js, deverá ser implementada uma função chamada <em>pieChart</em> com a seguinte assinatura¨<em>function pieChart(probabilities,colors)</em>, onde probabilities é um array contendo as probabilidades (porção da área de cada fatia) e colors é um array de mesmo comprimento que probabilities contento as cores que deverão ser atribuídas às fatias. Para a solução deste problema não será permitido o uso do <a href="https://bl.ocks.org/mbostock/3887235" target="_blank"><em>pie layout</em></a> do D3, isto é, as soluções deveram ser implementadas utilizando elementos básicos do SVG e D3.	
+      </div>
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 2 (Para todos os alunos)</h2>
+	Durante a última aula prática, vimos como usar transições em D3. Neste problema você irá utilizar o código desenvolvido no problema 1 para ter um pie chart animado. Para tando use o esqueleto de código presente nos arquivos <em>lista2_problema2.html</em>,<em>lista2_problema2.js</em> e <em>colorbrewer.min.js</em>. Você deverá modificar estes arquivos e entregar a sua versão final como solução. Um exmplo de como a animação deve ser comportar, pode ser visto <a href="https://bl.ocks.org/mbostock/5872848" target="_blank">aqui</a> (node que o seu pie chart não precisa necessariamente ser igual ao mostrado nesse link, use o link para ver o comportamento da animação).	
+      </div>
+      
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 3 (Para todos os alunos)</h2>
+	Abra a página <em>lista2_problema3.html</em>. Uau! Nosso velho scatterplot! Temos código para gerar uma visualização para um conjunto de dados geral!
+	<ol>
+	  <li>O que faremos agora é incluir nesse html o script <em>dataset.js</em>, que contém um dataset um pouco mais interessante de ser visualizado. Depois de ter feito isso, remova a definição do dataset no arquivo <em>lista2_problema3.js</em>. Depois de ter feito isso, você provavelmente verá o resultado incrível do scatterplot nesse novo dataset! O que você aprendeu a partir dessa visualização? (provavelmente não muito). Por que isso ocorreu? O que você faria para modificar isso? Sugira possíveis soluções para o problema e tente implementá-las. Escreva suas considerações num arquivo texto, chamado <em>problema3_1.txt</em>.
+	  </li>
+	  <li>
+	    Agora começaremos a adicionar funcionalidades de interação do usuário em nossas visualizações. Para tanto, incluiremos a capacidade de selecionar pontos no nosso scatterplot. Desejamos ser capazes de usar o mouse para desenhar um retangulo que seja capaz de selecionar pontos. Use como base este <a href="http://bl.ocks.org/lgersman/5310854" target="_blank">código</a>. Modifique a função que responde ao evento de "mouseup" para que quando o botão do mouse for solto, os pontos dentro do retângulo sejam coloridos de vermelho. Novamente, você não deve usar nenhuma função pré-definida em D3 para fazer seleções. Como dica, você provavelmente vai querer dar uma olhada na função <em>invert</em> das escalas em D3.
+	  </li>
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem4"> 
+	<h2>Problema 4 (Obrigatório apenas para alunos de pós-graduação)</h2>
+	Modifique o códico do problema 3 para:
+	<ol>
+	  <li>Suportar seleções "persistentes", ou seja, os retângulos da seleção não devem "apagar" ao botão do mouse ser solto. 	    
+	  </li>
+	  <li>Seu código deve ser capaz de suportar duas seleções simultâneas, identificadas como azul e laranja. Os pontos selecionados (dentro de cada retângulo) devem ser coloridos de acordo com a cor da seleção. 	    
+	  </li>
+	  <li>Deverá ser possível de clicar em um retângulo de seleção e arrastá-lo (dragging) pela tela, e a cor dos pontos selecionados deve ser alterada de acordo. 	    
+	  </li>
+	  <li>Para cada uma das seleções criadas, a interface deve ser capaz de plotar a regressão linear dos pontos selecionados por cada retângulo. A reta de regressão deve ser plotada com a cor da seleção correspondente.
+	  </li>
+	</ol>	  
+      </div>
+
+    </body>
+</html>   
