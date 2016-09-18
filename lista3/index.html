@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista 3</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>	        	
+    </head>
+    <body>
+      <h1>Visualização de Dados 2016.2 Lista de Exercícios 3</h1>
+      <!--------------------------------- -->
+      <div id="info"> 
+	<h2>Informações Gerais</h2>
+	Os três primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Os alunos de graduação que resolverem o problema 4 <strong>integralmente</strong>, receberam créditos extras na nota das listas de exercício. É recomendada a leitura dos capítulos 3 e 5 do livro <em>Interactive Data Visualization for the Web</em> e também o uso da documentação da <em>Mozilla Developer Network</em>.
+      </div>
+      <!--------------------------------- -->
+      <div id="duedate"> 
+      <h2>Data de Entrega</h2>
+      A entrega deverá ser feita via GitHub até 26/09/2016 até 23:59. Veja as instruções para entrega <a href="http://www.cin.ufpe.br/~nivan/teaching/data_vis/fall_2016/website/assignments.html">aqui</a>.
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 1 (Para todos os alunos)</h2>
+	Neste problema utilizaremos as ferramentas que aprendemos em sala para visualizar dados de acidente de trânsito em Recife. Execute os itens a seguir (não utilize as funções de Brush do D3):
+
+	<ol>
+	  <li><strong>Plotar Mapa e Dados Geográficos ("Overview First"):</strong> Baixe <a href="http://dados.recife.pe.gov.br/storage/f/2013-07-15T15%3A17%3A15.285Z/bairros.geojson">este arquivo</a> que contém dados da geometria das fronteiras dos bairros do Recife. Como na última aula, use esses dados para plotar um mapa com as linhas dos bairros. Visite a <a href="http://dados.recife.pe.gov.br/dataset/acidentes-de-transito-com-vitimas-2014" target="_blank">página</a> que contém dados de registros de acidentes de trânsito com vítimas em Recife e baixe o arquivo correspondente ao mês de novembro no ano de 2014. Plote os bairros do Recife e também os acidentes como pontos no mapa. Sua interface deve incluir um "checkbox" (não necessariamente dentro do elemento svg que contém o mapa) com a função "colorir pontos". Quando este checkbox estiver "ligado", os pontos devem ser coloridos de acordo com o "tipo" do acidente (escolha bem sua escala de cores). 
+	  </li>
+	  <li><strong>Implemente Funções de Interação ("Pan and Zoom"):</strong> Implemente funções de navegação no mapa (Pan + Zoom). Você deve usar o botão esquerdo do mapa para navegar ("Pan") e o scroll do mouse (mouse wheel) para a função de "zoom". 
+	  </li>
+	  <li><strong>Implemente Funções de Seleção ("Details on Demand"):</strong> Implemente funções de seleção no mapa. Como na última lista, você deve implementar funções de brushing (seleção) retangular. Use o botão direito do mouse para definir as seleções. Uma vez que o mouse for solto, imprima no console a quantidade de pontos selecionados de cada tipo (com os tipos impressos em ordem alfabética).
+	  </li>
+	</ol>
+      </div>
+      <!--------------------------------- -->
+      <div id="problem2"> 
+	<h2>Problema 2 (Para todos os alunos)</h2>
+	Uma técnica bastante poderosa em visualização interativa de dados são as vistas coordenadas (coordinated views). Nesta técnica, visualizações distintas são utilizadas para ver os dados em diferentes perspectivas. O termo "coordenadas" siginifica que interações (no nosso caso seleção) em uma das vistas muda as outras vistas automaticamente para refletir esta interação (os mesmos dados são selecionados nas outras listas). Nesse problema você deverá implementar um esquema de vistas coordenadas simples, utilizando o mesmo conjunto de dados do problema 1 (não utilize as funções de Brush do D3). Para tanto, implemente um sistema com duas vistas. A primeira será o mapa do problema 1. A segunda será um histograma que mostrará o numéro de acidentes de cada tipo (isto é, cada barra representará um tipo de acidente), as barras devem ser coloridas da mesma forma que os pontos (isto é, obedecer o checkbox "colorir pontos"). Quando nenhum ponto estiver selecionado, todo o dataset deve ser mostrado. Se o usuário selecionar pontos no mapa, o histograma deve ser atualizado para refletir a quantidade de acidente selecionados em cada tipo (caso nenhum dado estiver no retângulo de seleção, volte ao estado inicial). As barras do histograma deverão funcionar como checkboxes, i.e., poderão ser ativadas ou desativadas (o default são todas ativadas): dados correspondente a barras ativadas devem ser mostrados em cores, dados não selecionados deverão ser mostrados em uma cor neutra (e deverão ser desenhados "atrás" de todos os pontos selecionados). Uma boa dica é implementar cada uma das vistas isolodamente e juntá-las em um único html cada uma em um elemento svg.
+      </div>
+      
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 3 (Para todos os alunos)</h2>
+	Agora iremos incrementar a interface do problema 2. Visite novamente a página que contém os dados e baixe todos os dados (de março a dezembro de 2014) de acidentes. Inclua mais uma vista no sistema do problema 3 para mostrar como os dados variam no tempo. Que tipo de plot você escolheria para representar essa vista? Você seria capaz de explicar o porquê dessa escolha? Na sua vista você deve ser capaz de mostrar o número total de acidentes e também o numéro de acidentes de cada tipo (o objetivo claro é entender como esses números variam com o tempo, nesse caso mês do ano). Você deve ser capaz de selecionar meses do ano e as vistas correspondentes devem ser atualizadas de maneira similar ao problema 2.
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem4"> 
+	<h2>Problema 4 (Obrigatório apenas para alunos de pós-graduação)</h2>
+	Nesse problema incrementaremos um pouco mais o sistema obtido no problema 3. O objetivo é implementar na vista geográfica (mapa) uma seleção poligonal, isto é, o usuário deve ser capaz de desenhar um polígono arbitrário com o mouse (como com o lápis em um programa de desenho) e quando o mouse for solto, somente pontos dentro do polígono devem ser selecionados.
+      </div>
+
+    </body>
+</html>   
