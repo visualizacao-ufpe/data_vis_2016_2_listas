@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="pandoc" />
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+
+    <title>Lista 4</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>	        	
+  </head>
+    <body>
+      <h1>Visualização de Dados 2016.2 Lista de Exercícios 4</h1>
+      <!--------------------------------- -->
+      <div id="info"> 
+	<h2>Informações Gerais</h2>
+	Os dois primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Os alunos de graduação que resolverem o problema 3 <strong>integralmente</strong>, receberam créditos extras na nota das listas de exercício.
+      </div>
+      <!--------------------------------- -->
+      <div id="duedate"> 
+      <h2>Data de Entrega</h2>
+      A entrega deverá ser feita via GitHub até 14/10/2016 até 23:59. Veja as instruções para entrega <a href="http://www.cin.ufpe.br/~nivan/teaching/data_vis/fall_2016/website/assignments.html">aqui</a>.
+      </div>
+
+      <!--------------------------------- -->
+      <div id="problem1"> 
+	<h2>Problema 1 (Para todos os alunos)</h2>
+	Neste problema faremos uso da técnica de redução, <em>Box Plot</em>, para construir sumários visuais de coleções de dados. Você implementará o que se pede a seguir em uma página html chamada problema1.html e um arquivo js chamado problema1.js. Para testes você deverá usar um conjunto de dados de temperatura em New Bedford (obtido do professor David Koop da Universidade de Massachussets). O conjunto de dados pode ser incluído no código através do comando:
+
+	<pre><code>&lt;script src="http://www.cis.umassd.edu/~dkoop/dsc530/a1/nbweather.js" type="text/javascript"&gt&lt;/script&gt</code></pre>
+
+	Esses dados contém medidas de temperatura mínima, média e máxima para diversos dias durante os anos de 2013, 2014, 2015 e 2016.	A sua tarefa será implementar uma função <em>boxPlot(ano,temp)</em> que dado um ano (exemplo, 2015) e um tipo de temperatura (deve ser "min", "med", ou "max") desenha um plot contento um box plot cada mês do ano correspondente para o tipo de temperatura desejada. Cada box plot, deverá ser construído como visto como <a href="http://www.physics.csbsju.edu/stats/simple.box.defs.gif" targert="_blank">neste exemplo</a>. Como parte da sua entrega, deixe no html o resultado de boxPlot(2015,"med").	O seu plot final deverá se assemelhar ao exemplo a seguir: <br><br><br>
+	    <center><img src="figs/exemplo_box_plot.png" width="500"></img></center>
+      </div>
+      <!--------------------------------- -->
+      <div id="problem2"> 
+	<h2>Problema 2 (Para todos os alunos)</h2>
+	Neste problema implementaremos a técnica Kernel Density Estimation. Para fins de comparação também iremos implementar uma função para computação de histogramas.
+	Como visto em sala, existem <a href="https://en.wikipedia.org/wiki/Kernel_(statistics)#Kernel_functions_in_common_use">várias funções de Kernel</a> que podem ser usadas.
+	No que se segue, usaremos o <em>Kernel Gaussiano</em>, definido no link anterior. Iremos implementar:
+	<ol>
+	  <li>Uma função chamada <em>histogram(arrayDeNumeros, esquerda, direita, numeroDeBins)</em>, que cria um histograma com o numero de bins dado cobrindo o intervalo entre os valores esquerda e direita. Por exemplo, para criar um histograma com 10 bins no intervalo [0,1] (para um certo conjunto de dados), usaremos histogram([0,0,0.5,0.6,0.75,0.75,0.8,1],0,1,10).
+	  </li>
+	  <li>Uma função chamada <em>kde(arrayDeNumeros,amplitude,esquerda,direita,numeroDeSamples)</em> que cria o gráfico da função de densidade estimada com Kernel Gaussiano, com um valor de amplitude dado (a amplitude corresponde à variável h na <a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">fórmula vista em sala</a>. A fim de poder plotar o gráfico, usaremos os parâmetros auxiliares, esquerda, direita e numeroDeSamples. Eles significam que devem ser tomados um numeroDeSamples igualmente espaçados no intervalo [equerda,direita] para plotar a linha do gráfico. Note no entando que essas variáveis são usadas somente para o gráfico, não sendo, portanto, intrínsicas do KDE.
+	  </li>
+	</ol>
+      </div>
+      
+      <!--------------------------------- -->
+      <div id="problem3"> 
+	<h2>Problema 3 (Obrigatório apenas para alunos de pós-graduação)</h2>
+	Implemente uma função kde2D(arrayDePontosNoPlano,amplitude,limiteEsquerda,limiteDireita,limiteInferior,limiteSuperior,N) que dado um conjunto de pontos no plano, desenha a Kernel Density Estimation no plano usando o Kernel Gaussiano. A Kernel Density Estimation deve ser mostrada como um mapa de cores, onde as cores são estimadas em um grid retângular dado pela bounding box [limiteEsquerda,limiteDireita]x[limiteInferior,limiteSuperior] e contêm N*N células.
+      </div>
+
+    </body>
+</html>   
