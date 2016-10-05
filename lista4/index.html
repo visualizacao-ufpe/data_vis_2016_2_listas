@@ -16,7 +16,7 @@
       <!--------------------------------- -->
       <div id="info"> 
 	<h2>Informações Gerais</h2>
-	Os dois primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Os alunos de graduação que resolverem o problema 3 <strong>integralmente</strong>, receberam créditos extras na nota das listas de exercício.
+	Os três primeiros exercícios desta lista são obrigatórios (todos alunos devem fazer). Os problemas remanescentes só são obrigatórios para alunos de pós-graduação. Os alunos de graduação que resolverem o problema 4 <strong>integralmente</strong>, receberam créditos extras na nota das listas de exercício.
       </div>
       <!--------------------------------- -->
       <div id="duedate"> 
@@ -47,11 +47,17 @@
 	  </li>
 	</ol>
       </div>
-      
+
       <!--------------------------------- -->
       <div id="problem3"> 
-	<h2>Problema 3 (Obrigatório apenas para alunos de pós-graduação)</h2>
-	Implemente uma função kde2D(arrayDePontosNoPlano,amplitude,limiteEsquerda,limiteDireita,limiteInferior,limiteSuperior,N) que dado um conjunto de pontos no plano, desenha a Kernel Density Estimation no plano usando o Kernel Gaussiano. A Kernel Density Estimation deve ser mostrada como um mapa de cores, onde as cores são estimadas em um grid retângular dado pela bounding box [limiteEsquerda,limiteDireita]x[limiteInferior,limiteSuperior] e contêm N*N células.
+	<h2>Problema 3 (Para todos os alunos)</h2>
+	Em tempos de eleição, iremos construir uma visualização para mostrar os votos recebidos pelos candidatos a veriador da cidade do Recife (dados contidos no arquivo <em>cand_ver_recife_2016.csv</em>. Queremos não somente entender os votos recebidos por cada candidato, mas também os votos por partido. Para isso usaremos a técnica <a href="https://en.wikipedia.org/wiki/Treemapping">treemap</a>. A hierarquia a ser visualizada é basicamente os diferentes partidos (pais) e seus candidatos (filhos). O tamanho dos tiles da treemap deve ser proporcional ao número de votos do candidato. Os tiles de cada partido devem ser coloridos com a cor do partido correspondente. Para fazer a visualização, use o <a href="https://github.com/d3/d3-hierarchy#treemap">TreemapLayout</a> do d3. 
+      </div>
+      
+      <!--------------------------------- -->
+      <div id="problem4"> 
+	<h2>Problema 4 (Obrigatório apenas para alunos de pós-graduação)</h2>
+	Implemente uma função kde2D(arrayDePontosNoPlano,amplitude,limiteEsquerda,limiteDireita,limiteInferior,limiteSuperior,N) que dado um conjunto de pontos no plano, desenha a Kernel Density Estimation no plano usando o Kernel Gaussiano. A Kernel Density Estimation deve ser mostrada como um mapa de cores, onde as cores são estimadas em um grid retângular dado pela bounding box [limiteEsquerda,limiteDireita]x[limiteInferior,limiteSuperior] e contêm N*N células. Inclua um <em>checkbox</em> cuja função é mostrar ou esconder os pontos de entrada (os pontons na lista arrayDePontosNoPlano). Insira dois botões cujas função são "diminuir amplitude" e "aumentar amplitude" (modificar o valor da amplitude dos kernels usados para construir a visualização). A sua visualização deverá ser atualizada quando o usuário interagir com o checkbox ou um dos botões.
       </div>
 
     </body>
